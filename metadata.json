@@ -1,0 +1,6 @@
+{
+  "name": "FoodieHub – Online Food Ordering System",
+  "description": "Full-stack MERN online food ordering system with interactive menu, shopping cart, user authentication, live order status tracking, and admin restaurant dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
