@@ -42,6 +42,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectFood }) 
     { id: 'South Indian', name: 'South Indian', emoji: '🥘', desc: 'Crispy dosas & idlis' },
     { id: 'Desserts', name: 'Sweet Desserts', emoji: '🍰', desc: 'Cakes & gulab jamuns' },
     { id: 'Beverages', name: 'Beverages', emoji: '🍹', desc: 'Lassis & coolers' },
+    { id: 'Hot Drinks', name: 'Hot Drinks', emoji: '☕', desc: 'Chai, coffee & cocoa' },
   ];
 
   return (
@@ -163,7 +164,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onSelectFood }) 
           </button>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4">
           {categories.map((cat) => (
             <button
               key={cat.id}

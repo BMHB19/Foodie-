@@ -51,13 +51,21 @@ export async function seedMongoDatabase(forceReset = false) {
     usersCount = 2;
   }
 
-  // 2. Seed Foods if empty
+  // 2. Seed Foods if empty (or add missing Hot Drinks category items)
   let foodsCount = await FoodModel.countDocuments();
   let insertedFoods: any[] = [];
   if (foodsCount === 0) {
     insertedFoods = await FoodModel.insertMany(SEED_FOODS);
     foodsCount = insertedFoods.length;
   } else {
+    const hotDrinksCount = await FoodModel.countDocuments({ category: 'Hot Drinks' });
+    if (hotDrinksCount === 0) {
+      const hotDrinksSeed = SEED_FOODS.filter((f) => f.category === 'Hot Drinks');
+      if (hotDrinksSeed.length > 0) {
+        await FoodModel.insertMany(hotDrinksSeed);
+        foodsCount = await FoodModel.countDocuments();
+      }
+    }
     insertedFoods = await FoodModel.find().limit(14);
   }
 

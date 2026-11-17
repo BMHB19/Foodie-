@@ -2,7 +2,7 @@ import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IFood extends Document {
   name: string;
-  category: 'Pizza' | 'Burger' | 'North Indian' | 'South Indian' | 'Desserts' | 'Beverages' | 'Breakfast';
+  category: 'Pizza' | 'Burger' | 'North Indian' | 'South Indian' | 'Desserts' | 'Beverages' | 'Hot Drinks';
   price: number;
   description: string;
   image: string;
@@ -26,7 +26,7 @@ const foodSchema = new Schema<IFood>(
     category: {
       type: String,
       required: [true, 'Category is required'],
-      enum: ['Pizza', 'Burger', 'North Indian', 'South Indian', 'Desserts', 'Beverages'],
+      enum: ['Pizza', 'Burger', 'North Indian', 'South Indian', 'Desserts', 'Beverages', 'Hot Drinks'],
     },
     price: {
       type: Number,

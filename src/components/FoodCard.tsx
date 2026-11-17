@@ -46,7 +46,7 @@ export const FoodCard: React.FC<FoodCardProps> = ({ food, onSelect }) => {
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center bg-stone-100 text-stone-400 p-4 text-center">
             <span className="text-4xl mb-1">
-              {food.category === 'Burger' ? '🍔' : food.category === 'Pizza' ? '🍕' : food.category === 'Desserts' ? '🍰' : food.category === 'Beverages' ? '🍹' : '🍛'}
+              {food.category === 'Burger' ? '🍔' : food.category === 'Pizza' ? '🍕' : food.category === 'Desserts' ? '🍰' : food.category === 'Beverages' ? '🍹' : food.category === 'Hot Drinks' ? '☕' : '🍛'}
             </span>
             <span className="text-xs font-medium text-stone-500">{food.name}</span>
           </div>

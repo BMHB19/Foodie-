@@ -237,7 +237,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="font-heading font-bold text-2xl text-stone-900 font-mono tabular-nums">
             {foods.length} Dishes
           </div>
-          <span className="text-[11px] text-stone-400">Available across 6 categories</span>
+          <span className="text-[11px] text-stone-400">Available across 7 categories</span>
         </div>
       </div>
 
@@ -476,6 +476,7 @@ export const AdminDashboard: React.FC = () => {
                     <option value="South Indian">South Indian</option>
                     <option value="Desserts">Desserts</option>
                     <option value="Beverages">Beverages</option>
+                    <option value="Hot Drinks">Hot Drinks</option>
                   </select>
                 </div>
 

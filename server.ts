@@ -42,7 +42,7 @@ interface FallbackDatabaseSchema {
   foods: Array<{
     _id: string;
     name: string;
-    category: 'Pizza' | 'Burger' | 'North Indian' | 'South Indian' | 'Desserts' | 'Beverages';
+    category: 'Pizza' | 'Burger' | 'North Indian' | 'South Indian' | 'Desserts' | 'Beverages' | 'Hot Drinks';
     price: number;
     description: string;
     image: string;
@@ -217,6 +217,17 @@ function readFallbackDatabase(): FallbackDatabaseSchema {
         }
         return u;
       });
+    }
+    if (Array.isArray(parsed.foods)) {
+      const hasHotDrinks = parsed.foods.some((f: any) => f.category === 'Hot Drinks');
+      if (!hasHotDrinks) {
+        const hotDrinksSeed = SEED_FOODS.filter((f) => f.category === 'Hot Drinks').map((food, idx) => ({
+          _id: `food_hot_${idx + 1}`,
+          ...food,
+        }));
+        parsed.foods.push(...hotDrinksSeed);
+        migrated = true;
+      }
     }
     if (migrated) {
       fs.writeFileSync(DB_FILE, JSON.stringify(parsed, null, 2), 'utf-8');

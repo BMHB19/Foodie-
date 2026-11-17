@@ -5,12 +5,13 @@ export type FoodCategory =
   | 'North Indian'
   | 'South Indian'
   | 'Desserts'
-  | 'Beverages';
+  | 'Beverages'
+  | 'Hot Drinks';
 
 export interface FoodItem {
   _id: string;
   name: string;
-  category: 'Pizza' | 'Burger' | 'North Indian' | 'South Indian' | 'Desserts' | 'Beverages';
+  category: 'Pizza' | 'Burger' | 'North Indian' | 'South Indian' | 'Desserts' | 'Beverages' | 'Hot Drinks';
   price: number;
   description: string;
   image: string;

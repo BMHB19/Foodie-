@@ -28,6 +28,7 @@ export const MenuPage: React.FC<MenuPageProps> = ({
     'South Indian',
     'Desserts',
     'Beverages',
+    'Hot Drinks',
   ];
 
   const fetchFoods = async () => {
