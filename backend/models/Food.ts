@@ -2,7 +2,7 @@ import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IFood extends Document {
   name: string;
-  category: 'Pizza' | 'Burger' | 'North Indian' | 'South Indian' | 'Desserts' | 'Beverages';
+  category: 'Pizza' | 'Burger' | 'North Indian' | 'South Indian' | 'Desserts' | 'Beverages' | 'Breakfast';
   price: number;
   description: string;
   image: string;
